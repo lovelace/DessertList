@@ -1,6 +1,6 @@
 #  Dessert List
 
-This was an iOS Coding Challenge for a potential job search. The instructions were to write a native iOS app to allow users to browse recipes using the (API at TheMealDB)[https://themealdb.om/api.php]. The app was to access two endpoints:
+This was an iOS Coding Challenge for a potential job search. The instructions were to write a native iOS app to allow users to browse recipes using the [API at TheMealDB](https://themealdb.om/api.php). The app was to access two endpoints:
 
 * https://themealdb.com/api/json/v1/1/filter.php?c=Dessert for fetching the list of meals in the Dessert category.
 * https://themealdb.com/api/json/v1/1/lookup.php?i=MEAL_ID for fetching the meal details by its ID.
