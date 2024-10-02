@@ -35,6 +35,8 @@ struct MealsListView: View {
                 lhs: Meal, rhs: Meal) -> Bool in return lhs.name < rhs.name
             }) { meal in
                 NavigationLink(destination: DetailedMealView(mealId: meal.id)) {
+                    MealImageView(name: meal.name, imageURL: meal.imageThumbURL)
+/*
                     HStack {
                         // I would prefer to use the preview version of the thumb which
                         // you're supposed to be able to get by adding "/preview" onto
@@ -48,8 +50,10 @@ struct MealsListView: View {
                         .frame(width: 50, height: 50)
                         Text(meal.name)
                     }
+ */
                 }
             }
+            .listStyle(.plain)
             .task {
                 await self.mealsModel.reload()
             }

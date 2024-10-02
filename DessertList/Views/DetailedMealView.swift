@@ -43,6 +43,7 @@ struct DetailedMealView: View {
                     } placeholder: {
                         ProgressView()
                     }
+                    .clipShape(.rect(cornerRadius: 20.0))
                     .frame(width: 300, height: 300)
                 }
                 Text("\(meal.name)")
@@ -66,6 +67,17 @@ struct DetailedMealView: View {
                                         ProgressView()
                                     }
                                     .frame(width: 50, height: 50)
+                                    .background(
+                                        LinearGradient(gradient:
+                                                        Gradient(colors: [Self.gradientStart, Self.gradientEnd]),
+                                                       startPoint:
+                                                        UnitPoint(x: 0.5, y: 0),
+                                                       endPoint:
+                                                        UnitPoint(x: 0.0, y: 0.6)
+                                                      )
+                                        .opacity(0.5)
+                                    )
+                                    .clipShape(.rect(cornerRadius: 5.0))
                                     Text("\(measure)")
                                     Text("\(ingredient)")
                                 }
@@ -97,6 +109,10 @@ struct DetailedMealView: View {
             await meal = detailedMealModels.getMealDetails(id: mealId)
         }
     }
+    
+    static let gradientStart = Color(red: 239.0 / 255, green: 120.0 / 255, blue: 221.0 / 255)
+    static let gradientEnd = Color(red: 239.0 / 255, green: 172.0 / 255, blue: 120.0 / 255)
+
 }
 
 #Preview {
